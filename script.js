@@ -57,7 +57,7 @@ change.style.marginBottom = `5vh`;
 
 // Function to hide the input entry 
 valid.addEventListener(`click`, event => {
-    
+  
     //diplay name of player
   if (playerName.value !== '') {
     playerName.style.display = `none`;
@@ -88,11 +88,12 @@ formulaire.appendChild(resultat);
 // Style of display Info
 resultat.style.fontSize = `4rem`;
 resultat.style.color = `red`;
-
+let myLabel = 1;
 
 // Function who calculate the result and write on html
 valid.addEventListener('click', event => {
   event.preventDefault();
+  myLabel++;
   console.log(random);
   // if number are more of the random.
   if (numberPlayer.value < random) {
@@ -118,7 +119,7 @@ valid.addEventListener('click', event => {
     displayName.style.display = `none`;
     change.style.display = `none`;
     body.style.backgroundImage = `url("https://www.transparenttextures.com/patterns/old-map.png")`;
-    resultat.innerHTML = (`Congratulation ${playerName.value} , you win !!!` );
+    resultat.innerHTML = (`Congratulation ${playerName.value} , you win in ${myLabel} try !!!` );
      }
      
   })
