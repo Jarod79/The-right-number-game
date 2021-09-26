@@ -36,7 +36,10 @@ for (const entry of document.querySelectorAll(`input`)) {
  //Style of number entry input
  numberPlayer.style.marginBottom = `20px`;
  numberPlayer.style.marginTop = `10px`;
+
 // Style of Button valid
+valid.style.color = `white`;
+valid.style.backgroundColor = `blue`;
 valid.style.borderRadius = `30px`;
 valid.style.margin = `auto`;
 valid.style.width = `20vh`;
