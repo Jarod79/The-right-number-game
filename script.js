@@ -33,8 +33,9 @@ for (const entry of document.querySelectorAll(`input`)) {
         entry.style.textAlign = 'center';
         entry.style.margin = `auto`;
 }
-
-
+ //Style of number entry input
+ numberPlayer.style.marginBottom = `20px`;
+ numberPlayer.style.marginTop = `10px`;
 // Style of Button valid
 valid.style.borderRadius = `30px`;
 valid.style.margin = `auto`;
