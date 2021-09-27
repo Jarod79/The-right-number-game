@@ -27,23 +27,27 @@ formulaire.style.flexDirection = `column`;
 
 //Style of all input
 for (const entry of document.querySelectorAll(`input`)) {
-        entry.style.borderRadius = `20px`;
+        entry.style.borderRadius = `8px`;
         entry.style.width = '50vh';
         entry.style.height = '30px';
         entry.style.textAlign = 'center';
+        entry.style.border = `2px solid Orange`
         entry.style.margin = `auto`;
+        entry.style.boxShadow = `5px 5px orange`;
 }
  //Style of number entry input
  numberPlayer.style.marginBottom = `20px`;
  numberPlayer.style.marginTop = `10px`;
+ 
 
 // Style of Button valid
 valid.style.color = `white`;
 valid.style.backgroundColor = `blue`;
-valid.style.borderRadius = `30px`;
+valid.style.border = `2px solid shadow`;
 valid.style.margin = `auto`;
 valid.style.width = `20vh`;
 valid.style.height = `25px`;
+valid.style.boxShadow = `5px 5px 5px black`
 
 //Element of diplay name
 let displayName = document.createElement(`h1`);
@@ -113,6 +117,7 @@ valid.addEventListener('click', event => {
   // If found the wonderfull number.
   else {
     resultat.style.color = `#2FFE25`;
+    resultat.style.textShadow = `3px 1px 3px black`;
     numberPlayer.style.display = `none`;
     valid.innerHTML = `Replay`;
     valid.addEventListener(`click`,event =>{
