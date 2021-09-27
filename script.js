@@ -17,7 +17,7 @@ body.style.textAlign = `center`;
 body.style.fontSize = `2rem`;
 
 
-// STYLE OF FORM
+// Style of form
 formulaire.style.width = `100vh`;
 formulaire.style.margin = `auto`;
 formulaire.style.textAlign = `center`;
@@ -49,23 +49,31 @@ valid.style.width = `20vh`;
 valid.style.height = `25px`;
 valid.style.boxShadow = `5px 5px 5px black`
 
-//Element of diplay name
+//Diplay of Name to player
+//Create h1
 let displayName = document.createElement(`h1`);
+//style text size
 displayName.style.fontSize = `4rem`;
+//Place to HTML
 player.appendChild(displayName);
 
-//element of button modified
+//Button to modified player name in party
+//Create button
 const change = document.createElement(`button`);
+//Place to HTML
 player.appendChild(change);
-change.innerHTML = `Modified Name`;
+//Adding name on button
+change.innerHTML = `Modify Name`;
+//Style of button
 change.style.display = `none`;
 change.style.margin = `auto`;
 change.style.marginBottom = `5vh`;
+change.style.boxShadow = `5px 5px 5px black`
+
 
 // Function to hide the input entry 
 valid.addEventListener(`click`, event => {
-  
-    //diplay name of player
+  //diplay name of player
   if (playerName.value !== '') {
     playerName.style.display = `none`;
     displayName.innerHTML = `Let's start, ${playerName.value} ! `;
@@ -78,6 +86,7 @@ valid.addEventListener(`click`, event => {
     displayName.innerHTML = `Enter your name please !`;
   }
 
+
 //function to modified the name in party
 })
 change.addEventListener(`click`,event =>{
@@ -88,29 +97,37 @@ change.addEventListener(`click`,event =>{
 // Random number to find
 const random = Math.floor(Math.random() * 100) + 1;
 
+
 // Info for player to game instant
+//Create h1
 let resultat = document.createElement(`h1`);
+//PLace to HTML
 formulaire.appendChild(resultat);
+
 
 // Style of display Info
 resultat.style.fontSize = `4rem`;
 resultat.style.color = `red`;
-let myLabel = 1;
+
+//Variable count number of try
+let countTry = 1;
 
 // Function who calculate the result and write on html
 valid.addEventListener('click', event => {
   event.preventDefault();
-  myLabel++;
+  countTry++;
   console.log(random);
   // if number are more of the random.
   if (numberPlayer.value < random) {
     resultat.innerHTML = (`It is more than ${numberPlayer.value}`);
+    //reset entry to input
     numberPlayer.value = '';
   }
 
   // if the number are less of the random.
     else if (numberPlayer.value > random) {
     resultat.innerHTML = (`It is less than ${numberPlayer.value}`);
+    //reset entry to input
     numberPlayer.value = '';
   }
 
@@ -127,7 +144,7 @@ valid.addEventListener('click', event => {
     displayName.style.display = `none`;
     change.style.display = `none`;
     body.style.backgroundImage = `url("https://www.transparenttextures.com/patterns/old-map.png")`;
-    resultat.innerHTML = (`Congratulation ${playerName.value} , you win in ${myLabel} try !!!` );
+    resultat.innerHTML = (`Congratulation ${playerName.value} , you win in ${countTry} try !!!` );
      }
      
   })
