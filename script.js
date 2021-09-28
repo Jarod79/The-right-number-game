@@ -27,18 +27,18 @@ formulaire.style.flexDirection = `column`;
 
 //Style of all input
 for (const entry of document.querySelectorAll(`input`)) {
-        entry.style.borderRadius = `8px`;
-        entry.style.width = '50vh';
-        entry.style.height = '30px';
-        entry.style.textAlign = 'center';
-        entry.style.border = `2px solid Orange`
-        entry.style.margin = `auto`;
-        entry.style.boxShadow = `5px 5px orange`;
+  entry.style.borderRadius = `8px`;
+  entry.style.width = '50vh';
+  entry.style.height = '30px';
+  entry.style.textAlign = 'center';
+  entry.style.border = `2px solid Orange`
+  entry.style.margin = `auto`;
+  entry.style.boxShadow = `5px 5px orange`;
 }
- //Style of number entry input
- numberPlayer.style.marginBottom = `20px`;
- numberPlayer.style.marginTop = `10px`;
- 
+//Style of number entry input
+numberPlayer.style.marginBottom = `20px`;
+numberPlayer.style.marginTop = `10px`;
+
 
 // Style of Button valid
 valid.style.color = `white`;
@@ -78,20 +78,19 @@ valid.addEventListener(`click`, event => {
     playerName.style.display = `none`;
     displayName.innerHTML = `Let's start, ${playerName.value} ! `;
     change.style.display = `block`;
-    }
+  }
   //display if the player don't have enter a value
-  else
-  {
+  else {
     change.style.display = `none`;
     displayName.innerHTML = `Enter your name please !`;
   }
 
 
-//function to modified the name in party
+  //function to modified the name in party
 })
-change.addEventListener(`click`,event =>{
-    event.preventDefault();
-    playerName.style.display = `block`;
+change.addEventListener(`click`, event => {
+  event.preventDefault();
+  playerName.style.display = `block`;
 })
 
 // Random number to find
@@ -117,15 +116,18 @@ valid.addEventListener('click', event => {
   event.preventDefault();
   countTry++;
   console.log(random);
+  if (numberPlayer.value < 1 || numberPlayer.value > 100) {
+    resultat.innerHTML = (`Type a number between 1 and 100!`);
+  }
   // if number are more of the random.
-  if (numberPlayer.value < random) {
+  else if (numberPlayer.value < random) {
     resultat.innerHTML = (`It is more than ${numberPlayer.value}`);
     //reset entry to input
     numberPlayer.value = '';
   }
 
   // if the number are less of the random.
-    else if (numberPlayer.value > random) {
+  else if (numberPlayer.value > random) {
     resultat.innerHTML = (`It is less than ${numberPlayer.value}`);
     //reset entry to input
     numberPlayer.value = '';
@@ -137,15 +139,15 @@ valid.addEventListener('click', event => {
     resultat.style.textShadow = `3px 1px 3px black`;
     numberPlayer.style.display = `none`;
     valid.innerHTML = `Replay`;
-    valid.addEventListener(`click`,event =>{
-    window.location.reload(playerName);
+    valid.addEventListener(`click`, event => {
+      window.location.reload(playerName);
     });
     playerName.style.display = `none`;
     displayName.style.display = `none`;
     change.style.display = `none`;
     body.style.backgroundImage = `url("https://www.transparenttextures.com/patterns/old-map.png")`;
-    resultat.innerHTML = (`Congratulation ${playerName.value} , you win in ${countTry} try !!!` );
-     }
-     
-  })
+    resultat.innerHTML = (`Congratulation ${playerName.value} , you win in ${countTry} try !!!`);
+  }
+
+})
 
