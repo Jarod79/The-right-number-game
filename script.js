@@ -109,7 +109,7 @@ resultat.style.fontSize = `4rem`;
 resultat.style.color = `red`;
 
 //Variable count number of try
-let countTry = 1;
+let countTry = 0;
 
 // Function who calculate the result and write on html
 valid.addEventListener('click', event => {
